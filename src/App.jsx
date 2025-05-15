@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   return (
-    <div className='text-3xl font-bold underline'>App</div>
-  )
-}
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route element={<Home />} path="/" />
+        <Route element={<Cart />} path="/cart" />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
